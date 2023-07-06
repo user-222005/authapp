@@ -1,7 +1,8 @@
+import LoginPage from "@/components/Login/login";
 
 
 export default function Home() {
   return (
-      <h1>helloWorld!</h1>
+      <h1><LoginPage /></h1>
   )
 }
