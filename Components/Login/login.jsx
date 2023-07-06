@@ -1,10 +1,11 @@
-// import Head from "next/head"
-
 'use client'
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
 export default function LoginPage(){
+ 
+  const router = useRouter()
     const [email,setEmail]=useState("")
     const [password,setPassword]= useState("")
 
@@ -94,6 +95,7 @@ export default function LoginPage(){
                     <a
                       href="#"
                       class="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                      onClick={()=>router.push("/register")}
                     >
                       Sign up
                     </a>
