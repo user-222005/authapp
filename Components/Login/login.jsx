@@ -1,6 +1,8 @@
 'use client'
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "@/utils/firebase";
 
 
 export default function LoginPage(){
@@ -8,9 +10,20 @@ export default function LoginPage(){
   const router = useRouter()
     const [email,setEmail]=useState("")
     const [password,setPassword]= useState("")
+    const auth = getAuth(app)
 
     const handleSubmit = (e)=>{
       e.preventDefault();
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
     }
 
     return (
