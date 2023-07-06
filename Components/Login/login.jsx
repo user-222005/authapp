@@ -18,6 +18,7 @@ export default function LoginPage(){
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          router.push("/profile")
           // ...
         })
         .catch((error) => {
