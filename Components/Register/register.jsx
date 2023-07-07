@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app, db, storage } from "@/utils/firebase";
 import { useRouter } from "next/navigation";
-import { ref, uploadBytes } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 
 
@@ -13,17 +13,28 @@ export default function RegisterPage(){
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     const [confirmPassword,setConfirmPassword]=useState("")
-    const [file,setFile] = useState("")
+    const [file,setFile] = useState()
     const [submit, setSubmit]=useState(false)
     const [urls, setUrls]=useState("")
     const auth = getAuth(app)
+    
+    console.log(urls);
+    console.log(file);
+
     const savePost =async()=>{
-      await setDoc(doc(db,"data",Date.now().toString()),{username:username,email:email, password:password,confirmPassword:confirmPassword,image:urls})
+      await setDoc(doc(db, "data", Date.now().toString()), {
+        Name: username,
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword,
+        image: urls,
+      });
 
     }
 
     useEffect(()=>{
-      if(submit===true){savePost()}
+      if(submit==true)
+      savePost()
     },[submit])
 
     const handleSubmit = async(e)=>{
@@ -34,15 +45,22 @@ export default function RegisterPage(){
         const storageRef = ref(storage, 'Photos/'+file?.name);
         uploadBytes(storageRef, file).then((snapshot) => {
             console.log('Uploaded a blob or file!');
-          }).then(resp=>{
+          }).then((resp)=>{
             getDownloadURL(storageRef).then(async(url)=>{
-                
-                setUrls((values)=>({url}));          
-                setSubmit(true);
-    
-            }) 
+              setUrls(url);
+              setSubmit(true)
+            })
           })
+       
 
+
+          await setDoc(doc(db, "data", Date.now().toString()), {
+            Name: username,
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword,
+            image: urls,
+          });
         
         createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -150,7 +168,7 @@ export default function RegisterPage(){
                       type="file"
                       name="file"
                       id="file"
-                      onChange={e=>setFile(e.target.value)}
+                      onChange={e=>setFile(e.target.files[0])}
                       placeholder="••••••••"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
