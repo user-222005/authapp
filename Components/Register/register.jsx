@@ -37,7 +37,7 @@ export default function RegisterPage(){
       {
       savePost()
     }
-    },[submit]);
+    },[fetchBusinesses]);
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
