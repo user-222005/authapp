@@ -1,5 +1,5 @@
 'use client'
-import ProfilePage from "../../components/Profile/Profile"
+import ProfilePage from "../../components/Profile/ProfilePage"
 import UserProfile from "../../components/userprofile/userprofile"
 import React from 'react'
 
