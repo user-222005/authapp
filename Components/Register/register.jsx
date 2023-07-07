@@ -34,8 +34,10 @@ export default function RegisterPage(){
 
     useEffect(()=>{
       if(submit==true)
+      {
       savePost()
-    },[submit])
+    }
+    },[submit]);
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
