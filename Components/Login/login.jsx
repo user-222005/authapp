@@ -5,7 +5,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "@/utils/firebase";
 
 
-export default function LoginPage(){
+const LoginPage=()=>{
  
   const router = useRouter()
     const [email,setEmail]=useState("")
@@ -122,3 +122,5 @@ export default function LoginPage(){
       </div>
     );
 }
+
+export default LoginPage;
