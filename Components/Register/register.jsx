@@ -15,6 +15,9 @@ export default function RegisterPage(){
 
     const handleSubmit = (e)=>{
         e.preventDefault();
+        if(password===confirmPassword){
+            alert("password mismatch")
+        }
         createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -43,7 +46,7 @@ export default function RegisterPage(){
                 <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
                   <div>
                     <label
-                      for="email"
+                      htmlFor="email"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Your email
@@ -60,7 +63,7 @@ export default function RegisterPage(){
                   </div>
                   <div>
                     <label
-                      for="password"
+                      htmlFor="password"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Password
@@ -77,7 +80,7 @@ export default function RegisterPage(){
                   </div>
                   <div>
                     <label
-                      for="confirm-password"
+                      htmlFor="confirm-password"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Confirm password
@@ -104,7 +107,7 @@ export default function RegisterPage(){
                     </div>
                     <div className="ml-3 text-sm">
                       <label
-                        for="terms"
+                        htmlFor="terms"
                         className="font-light text-gray-500 dark:text-gray-300"
                       >
                         I accept the{" "}
@@ -128,6 +131,7 @@ export default function RegisterPage(){
                     <a
                       href="#"
                       className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                      onClick={()=>router.push("/login")}
                     >
                       Login here
                     </a>
