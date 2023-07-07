@@ -2,10 +2,12 @@ import LoginPage from "@/components/login/Login";
 
 
 
-export default function LoginForm(){
+const LoginForm=()=>{
     return(
         <div>
             <LoginPage />
         </div>
     )
 };
+
+export default LoginForm;
