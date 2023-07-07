@@ -41,7 +41,7 @@ const UserProfile = () => {
     <div className='flex items-center justify-center h-screen w-screen'>
       {val.map((item,key)=>{
         return (
-          <div className="w-[32rem] bg-gray-400 rounded-lg flex items-center flex-col gap-3">
+          <div className="w-[32rem] bg-gray-100 rounded-lg flex items-center flex-col gap-3">
             <Image
               src={item.image}
               alt="image"
