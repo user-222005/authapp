@@ -1,6 +1,6 @@
 'use client'
-import ProfilePage from '@/components/Profile/Profile';
-import UserProfile from '@/components/userprofile/userprofile';
+import ProfilePage from "../../components/Profile/Profile"
+import UserProfile from "../../components/userprofile/userprofile"
 import React from 'react'
 
 function Profile() {
