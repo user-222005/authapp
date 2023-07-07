@@ -1,8 +1,10 @@
-import LoginPage from "@/components/login/LoginPage";
+import LoginPage from '@/components/login/LoginPage'
 
 
-export default function Home() {
+const Home=()=>{
   return (
       <h1><LoginPage /></h1>
   )
 }
+
+export default Home;
