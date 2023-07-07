@@ -41,7 +41,7 @@ const UserProfile = () => {
     <div className='flex items-center justify-center h-screen w-screen'>
       {val.map((item,key)=>{
         return (
-          <div className="w-[32rem] bg-gray-100 rounded-lg flex items-center flex-col gap-3">
+          <div className="w-[32rem] bg-gray-100 rounded-lg flex items-center flex-col gap-3" key={key}>
             <Image
               src={item.image}
               alt="image"
@@ -50,7 +50,7 @@ const UserProfile = () => {
               className="w-32 h-32 rounded-md"
             />
             <h1>
-              <span className="font-bold">Name:</span>
+              <span className="font-bold" key={key}>Name:</span>
               {item.Name}
             </h1>
             <h1>

@@ -31,7 +31,7 @@ const value = collection(db,"todo");
 useEffect(()=>{
     const getData = async (e)=>{
         const dbVal = await getDocs(value);
-        setVal(dbVal.docs.map((doc)=>({...doc.data(),id:doc.id})))
+        setVal(dbVal.docs.map((doc,key)=>({...doc.data(),key,id:doc.id})))
     };
     getData();
 },[val]);
