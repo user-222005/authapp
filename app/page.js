@@ -1,9 +1,10 @@
-import LoginPage from '@/components/login/LoginPage'
+import LoginPage from "@/components/login/loginPage"
+
 
 
 const Home=()=>{
   return (
-      <h1><LoginPage /></h1>
+      <h1><LoginPage/></h1>
   )
 }
 
