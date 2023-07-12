@@ -10,6 +10,6 @@ function Profile() {
       <UserProfile />
     </div>
   )
-}
+};
 
 export default Profile;

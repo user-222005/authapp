@@ -7,6 +7,6 @@ const TodoForm = () => {
       <TodoPage />
     </div>
   )
-}
+};
 
-export default TodoForm
+export default TodoForm;
