@@ -56,7 +56,7 @@ const handleUpdate=(id,inputs)=>{
 
     return (
       <>
-        <div className="min-w-screen min-h-screen bg-blue-900 md:w-full sm:w-full">
+        <div className="min-w-screen min-h-screen bg-blue-900">
           <div className="mb-4">
             <h1 className="text-white text-center text-3xl">TO-DO-LIST</h1>
           </div>
@@ -113,7 +113,7 @@ const handleUpdate=(id,inputs)=>{
             </form>
           </div>
           <>
-          <div className="flex items-center flex-col">
+          <div className="flex items-center justify-center flex-col md:w-96">
           {val.map((item, key) => {
           return (
             // <div className="mt-5 bg-white rounded-lg">
@@ -149,8 +149,8 @@ const handleUpdate=(id,inputs)=>{
             //     </div> */}
             //   </div>
             // </div>
-            <div className="mt-4 w-[30rem] bg-white flex justify-between p-1 rounded-lg" key={key}>
-              <h1 className="p-1 text-xl">{item.inputs}</h1>
+            <div className="mt-4 w-[30rem] bg-white flex justify-between p-1 rounded-lg md:w-32 sm:w-full" key={key}>
+              <h1 className="text-xl">{item.inputs}</h1>
               <hr className="border-1" />
               <div className="flex gap-4">
                 <button
