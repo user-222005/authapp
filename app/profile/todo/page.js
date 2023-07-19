@@ -1,4 +1,4 @@
-import TodoPage from "@/components/todo/todo"
+import TodoPage from '@/components/todo/todo';
 import React from 'react'
 
 const TodoForm = () => {
