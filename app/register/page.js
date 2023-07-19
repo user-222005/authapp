@@ -1,6 +1,4 @@
-// import RegisterPage from '@/Components/Register/register'
-import RegisterPage from "@/components/Register/register";
-
+import RegisterPage from "@/components/RegisterPage/register";
 
 
 const RegisterForm=()=>{

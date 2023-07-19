@@ -1,9 +1,9 @@
-// import LoginPage from "@/components/login/loginPage"
-import LoginPage from "@/components/login/loginPage";
+import LoginPage from "@/components/loginPage/loginPage";
 
 const LoginForm=()=>{
     return(
         <div>
+            {/* <LoginPage /> */}
             <LoginPage />
         </div>
     )
