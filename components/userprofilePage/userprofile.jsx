@@ -47,7 +47,7 @@ const UserProfile = () => {
 
 
   return (
-    <div className='flex items-center justify-center p-24 mt-24'>
+    <div className='flex items-center justify-center p-24 mt-28'>
       {val.map((item,key)=>{
         return (
           <>
