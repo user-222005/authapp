@@ -6,7 +6,7 @@ import React from 'react'
 
 function Profile() {
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       {/* <ProfilePage /> */}
       <UserProfile />
     </div>

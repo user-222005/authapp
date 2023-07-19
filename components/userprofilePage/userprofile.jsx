@@ -52,7 +52,7 @@ const UserProfile = () => {
         return (
           <>
             <section
-              className="flex items-center justify-center relative  h-500-px"
+              className="relative  h-500-px"
               key={key}
             >
               <div
