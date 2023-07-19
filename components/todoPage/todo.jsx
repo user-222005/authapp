@@ -56,7 +56,7 @@ const handleUpdate=(id,inputs)=>{
 
     return (
       <>
-        <div className="min-w-screen min-h-screen bg-blue-900 md:bg-full">
+        <div className="min-w-screen min-h-screen bg-blue-900 md:w-full sm:w-full">
           <div className="mb-4">
             <h1 className="text-white text-center text-3xl">TO-DO-LIST</h1>
           </div>
