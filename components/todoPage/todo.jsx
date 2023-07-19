@@ -149,7 +149,7 @@ const handleUpdate=(id,inputs)=>{
             //     </div> */}
             //   </div>
             // </div>
-            <div className="mt-4 w-[30rem] bg-white flex justify-between p-1 rounded-lg">
+            <div className="mt-4 w-[30rem] bg-white flex justify-between p-1 rounded-lg" key={key}>
               <h1 className="p-1 text-xl">{item.inputs}</h1>
               <hr className="border-1" />
               <div className="flex gap-4">
